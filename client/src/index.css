@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Jal Samarthya Design System - Environmental Theme
+All colors, gradients, fonts, etc are defined here with nature-inspired palette.
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base environmental colors */
+    --background: 210 25% 97%;
+    --foreground: 210 40% 8%;
+
+    /* Card system with subtle earth tones */
+    --card: 210 25% 98%;
+    --card-foreground: 210 35% 12%;
+
+    --popover: 210 25% 98%;
+    --popover-foreground: 210 35% 12%;
+
+    /* Primary: Deep water blue */
+    --primary: 210 85% 25%;
+    --primary-foreground: 210 25% 98%;
+    --primary-glow: 210 75% 35%;
+
+    /* Secondary: Fresh vegetation green */
+    --secondary: 145 65% 45%;
+    --secondary-foreground: 210 25% 98%;
+
+    /* Muted: Soft earth tones */
+    --muted: 210 20% 92%;
+    --muted-foreground: 210 25% 45%;
+
+    /* Accent: Vibrant nature green */
+    --accent: 155 70% 40%;
+    --accent-foreground: 210 25% 98%;
+
+    /* Destructive: Warm earth red */
+    --destructive: 15 75% 55%;
+    --destructive-foreground: 210 25% 98%;
+
+    /* UI elements */
+    --border: 210 25% 88%;
+    --input: 210 25% 90%;
+    --ring: 210 85% 25%;
+
+    --radius: 0.75rem;
+
+    /* Environmental gradients */
+    --gradient-water: linear-gradient(135deg, hsl(210 85% 25%), hsl(210 75% 35%));
+    --gradient-vegetation: linear-gradient(135deg, hsl(145 65% 45%), hsl(155 70% 40%));
+    --gradient-earth: linear-gradient(135deg, hsl(25 55% 65%), hsl(35 45% 55%));
+    --gradient-sky: linear-gradient(180deg, hsl(210 75% 85%), hsl(210 25% 97%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 85% 25%) 0%, hsl(155 70% 40%) 50%, hsl(145 65% 45%) 100%);
+
+    /* Environmental shadows */
+    --shadow-water: 0 10px 30px -10px hsl(210 85% 25% / 0.3);
+    --shadow-vegetation: 0 8px 25px -8px hsl(145 65% 45% / 0.25);
+    --shadow-earth: 0 6px 20px -6px hsl(25 55% 65% / 0.2);
+    --shadow-glow: 0 0 40px hsl(210 75% 35% / 0.4);
+
+    /* Smooth environmental transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-gentle: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Enhanced Logo Animations */
+@keyframes water-flow {
+  0% { transform: translateX(-2px) translateY(0px); }
+  25% { transform: translateX(1px) translateY(-1px); }
+  50% { transform: translateX(2px) translateY(0px); }
+  75% { transform: translateX(-1px) translateY(1px); }
+  100% { transform: translateX(-2px) translateY(0px); }
+}
+
+@keyframes leaf-sway {
+  0%, 100% { transform: rotate(-3deg) scale(1); }
+  50% { transform: rotate(3deg) scale(1.02); }
+}
+
+@keyframes ripple-expand {
+  0% { 
+    transform: scale(0.9); 
+    opacity: 0.9; 
+  }
+  33% { 
+    transform: scale(1.05); 
+    opacity: 0.6; 
+  }
+  66% { 
+    transform: scale(1.2); 
+    opacity: 0.3; 
+  }
+  100% { 
+    transform: scale(1.4); 
+    opacity: 0; 
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    filter: drop-shadow(0 0 8px rgba(14, 165, 233, 0.4)) drop-shadow(0 0 16px rgba(34, 197, 94, 0.2));
+  }
+  50% { 
+    filter: drop-shadow(0 0 16px rgba(14, 165, 233, 0.6)) drop-shadow(0 0 24px rgba(34, 197, 94, 0.4));
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-3px) rotate(1deg); }
+  66% { transform: translateY(-1px) rotate(-1deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Logo Animation Classes */
+.logo-animate {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+.logo-animate:hover {
+  animation: glow-pulse 2s ease-in-out infinite, float-gentle 1.5s ease-in-out infinite;
+}
+
+.water-animate {
+  animation: water-flow 5s ease-in-out infinite;
+}
+
+.leaf-animate {
+  animation: leaf-sway 6s ease-in-out infinite;
+  transform-origin: bottom left;
+}
+
+.ripple-animate {
+  animation: ripple-expand 3s ease-out infinite;
+}
+
+.floating-particles {
+  animation: float-gentle 4s ease-in-out infinite;
+}
+
+/* Text gradient shimmer effect */
+.text-gradient-shimmer {
+  background: linear-gradient(90deg, 
+    hsl(210, 85%, 40%) 0%, 
+    hsl(200, 85%, 50%) 25%, 
+    hsl(180, 85%, 45%) 50%, 
+    hsl(155, 70%, 45%) 75%, 
+    hsl(145, 65%, 45%) 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmer 3s linear infinite;
+}
